@@ -1,0 +1,124 @@
+
+=head1 NAME
+
+sigit - A tool to create random signatures.
+
+=head1 SYNOPSIS
+
+  sigit [-a file] [-r file] [-l file] [-u ident] [-cdevV]
+
+=head1 DESCRIPTION
+
+You know when you have been having your signature for too long, then it needs replacement, but what if you get tired of manualy having to come up with alot of new signatures all the time. These problems are no longer required, sigit will handle it for you. You decide how long you like to wait, untill the signature is changed, you can run it as a cron job, or as a deamon running in the background even when your not loged in on the system. The default running mode is probably the most appreciated, it is running as a normal process, and will be killed when you logout. 
+
+It is uptimized for beeing used on a system with alot of users, where the executable will be located for any user to reach. It has a configuration file, that any user can create and costumize for their special purpus. If the default configuration is used, the program will change the .plan file, where any special info on your user will be fetched from, when someone tryes to finger you on the system.  
+
+=head1 OPTIONS
+
+These are the command-line options for sigit:
+
+=over 5
+
+=item C<-a E<lt>addE<gt>>
+
+Use E<lt>addE<gt> when you have a signature, you want to add to the data file. This flag will take a file as the second argument parsed to the program. ie:
+B<sigit -a sigfile.txt>
+This will add the signatures mentioned in the C<sigfile.txt>, if there are more than one signature in the file, then they need to be seperated with 2 @ signs. And the first line in the file must start with a @@ else the program cant decide if there's multiple signatures to be found.
+Look in C<sigit.orig> for the correct structure, when having multiple signatures. 
+
+=item C<-c E<lt>cronjobE<gt>>
+
+The E<lt>cronjobE<gt> will be usefull if you decide to run the program as a normal cronjob. This will make sure, the program only creates one signature befor exiting.
+
+=item C<-e E<lt>editE<gt>>
+
+This E<lt>editE<gt> flag will read all the signatures found in the data file, and load your favorit editor as set in your $EDITOR with them. Here you can edit all the signatures as you prefere. Upon exit the program will rebuild the data file from the edited signatures.
+
+=item C<-d E<lt>deamoniseE<gt>>
+
+In order to run the program as a background E<lt>deamonE<gt> you will have to suply it with the  C<-d>. this change is made, since I found that the most frequent usage might either be as a cron job, or runnign as a normal process, since you would like it to get killed, once you logout. B<Hint>: C<you dont need to change the signatures for your emails, when your not loged in on the system, since very few people sends emails from their accounts while their not loged in.>
+
+=item C<-l E<lt>listE<gt>>
+
+If you want all the signatures into a regular text file, then you need to use this flag, it will run the progra, as if it was the '-e' flag you were using, but instead of loading your $EDITOR, it will save the files in the B<file> parset with the flag. 
+
+=item C<-r E<lt>rebuildE<gt>>
+
+Lets say you 'by accident' smashed the data file, then it is nice to know you can E<lt>rebuildE<gt> it. That is exactly what the C<-r> flag does, it will read from the file parsed to the program, and delete the previus data file, and replace it with one containing the signatures found in the file.
+
+=item C<-u E<lt>undueE<gt>>
+
+If you look through your file, containing all teh signatures, and find that one specific dosn't need to be there any more, then use this flag, to remove the signature from the data file. ie:
+B<sigit -u 3AA9B568>
+
+=item C<-v E<lt>verboseE<gt>>
+
+Sometimes it's good to know how the program is running, and how far it's in the execution. Here comes E<lt>verboseE<gt> as a very good solution. It will keep all the very specific infos hidden, yet let you know just what part of the program is beeing used, and how it went.
+
+=item C<-vv E<lt>very verboseE<gt>>
+
+The usage of E<lt>very verboseE<gt>, is mostly usefull, when your trying to debug the thing, and you have no idear what caused it to abort. Throw in a couple more v's and see what sort of extra info is displayed :)
+
+=item C<-V E<lt>versionE<gt>>
+
+The C<-V> will print the current version of the program, and exit.
+
+=back
+
+=head1 SEE ALSO
+
+sigit.rc(1)
+
+=head1 License and Disclaimer
+
+Sigit are Copyright (c) 2000 by Kenneth 'Redhead' Nielsen. Sigit may be
+used and distributed under the terms of the GNU General Public License. All
+other brand and product names are trademarks, registered trademarks or
+service marks of their respective holders.
+
+These programs are distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+
+You should have received a copy of the GNU General Public License along with
+this distribution; if not, write to the Free Software Foundation, Inc., 59
+Temple Place, Suite 330, Boston, MA 02111, USA.
+
+=head1 Acknowledgments
+
+Thanks go to:
+
+=over 5
+
+=item *
+
+Rasmus 'moffe' Hansen, for beeing a good consultant through the whole process.
+
+=back
+
+=head1 CHANGES
+
+See the README file that came with the source code.
+
+=head1 AUTHOR
+
+Sigit written by 
+
+Kenneth 'Redhead' Nielsen C<redhead@diku.dk>
+
+Documentation formatting by 
+
+Kenneth 'Redhead' Nielsen C<redhead@diku.dk>
+
+All future infos on the sigit exploration, can be found at: C<http://www.redhead.dk>
+
+=head1 REPORTING BUG
+
+You can report any bugs from: B<http://www.redhead.dk/download/bugs.html>
+
+=cut
+
+
+
+

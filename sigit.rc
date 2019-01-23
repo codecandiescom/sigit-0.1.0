@@ -1,0 +1,97 @@
+
+# $Id: sigit.rc,v 0.1 2001/03/06 21:23:12 redhead Exp $
+
+# This is the default sigit configuration file.. 
+# In here you will find an explanation and some 
+# default settings which sigit can handle. (reads must have)
+
+# remember no spaces after the identifier and the '='
+# and no leading spaces after the '=' to the value
+# and one more thing every setting which tells you any files
+# settigns must be 2 chars ore more.. 
+# all other is a big NO NO.. 
+
+# and another thing, the preset trailing sig thingy
+# cant be more than 72 chars per line
+# I MEAN IT.. If its longer, the program _WILL_ do unknown
+# things and it might eat your mem and spit it out in small pieces.
+
+# this is the file which will be written to from your $HOME 
+# if not set it will be the $HOME/.plan file it will allways start from
+# $HOME (A note to Møf' remember, set it from $HOME _not_ from root)
+
+sig_file=
+
+# This is the data file from which the signatures will be read
+# if not set it will read from the default databse 
+#  /usr/local/share/sigit/sigit.data
+# allways set this startig from root ie: /home/user/data
+
+data_file=
+
+# This is supposed to be the top line in your signature, 
+# most people uses it to display their name or their real email address
+# it can handle everything the preset between the @@ and \@@ can.
+
+t_line=-----------------------------------------------[ %P-%V. ]-----
+
+# This is the bottom line, where you can put any usefull info you might have
+# a link to a homepage or what ever..
+# it can handle everything the preset between the @@ and \@@ can.
+
+b_line=--------------------------------------------[ %H ]--
+
+
+# The delay setting is used when the program is run as a deamon
+# it is supposed to be the seconds you like to wait untill the  
+# signature should be changed.
+# guessing no one writes more than one email while 15 sec. parses.
+
+delay=15
+
+# if your mailer dosn't put a "-- " above the signature, this will 
+# make sure the program provides the sig with it..
+# alot of program uses this as a delimiter, when you ansver to a mail
+# and forwards it.. Then the program will delete what ever comes after
+# so the mail wont be too large.
+
+--=1
+
+# This is the magick setting.. 
+# every line within the @@ and \@@ will be placed befor your signature
+# ie:
+#
+# @@
+# my three  |
+# lines of  |
+# signature |
+# \@@
+#
+# Will produce a signature like:
+#
+# my three  | "We all know what is to be done,
+# lines of  |  But we wont deal with the truth,
+# signature |  Yet I dont care what you think" 
+#
+# If its left empty it will only hold the actual signature
+# bare in mind the program holds a prity printer, which will 
+# make sure any signature only have max 72 chars per line
+# and it will not produce signatures of more than 6 lines
+# instead it will give a default signature.
+
+
+# It can handle some special conversions parameters. If you need a '%' then you 
+# will need to put '%%' but it can handle conversions like: 
+#   %H   Displayes the homepage of this program.
+#   %M   Displayes the machine architechture.
+#   %N   Displayes the node name.
+#   %R   Displayes the kernel version.
+#   %P   Displayes the programname.
+#   %S   Displayes the System name.
+#   %U   Displayes the current uptime in a format like: days:hours:minuts:seconds
+#   %V   Displayes the version of the program.
+
+# you can fill in as much as you want to.. Tho only upto the first 575 chars will be used.
+
+@@
+\@@

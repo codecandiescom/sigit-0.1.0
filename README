@@ -1,0 +1,40 @@
+# $Id: README,v 0.5 2001/08/13 16:43:00 redhead Exp $
+
+Sigit 0.1.0
+
+
+Installation for RPM based systems:
+Use rpm -tb <the tar.gz file> to build a binary RPM for sigit. Use
+rpm -i or your favourite tool to install.
+
+Installation without RPM:
+1. Review the Makefile. Check the location of the "install" command and
+   choose the CFLAGS to suite your taste.
+2. If any changes were made to the prefered install setting, chenck the 
+   config.h file and accordingly change the setting for DEFAULT_DATA_FILE. 
+3. A different installation directory can be specified by using
+   'make PREFIX=/your/dir install'
+
+Additional hints:
+1. This version has changed quite alot, if you are using a future version
+   you will need to rebuild the data file since I have changed the very first
+   thing it reads from the file, so on first read, it will off. 
+
+2. On HP-UX systems use gmake, and for some reason the data file can't be
+   build correct. I suspects this to be a big/little endian problem.
+ 
+
+Limitations:
+It seems to be usign less memory than fetchmail, so if your not 
+intimidated to be running fetchmail, then this won't harm your machine.
+
+Known bugs:
+Please see http://www.redhead.dk/bugs.html for information.
+
+If you find a bug or problem, please report it to me using the form 
+found at http://www.redhead.dk/bugs.html 
+
+Kenneth 'Redhead' Nielsen  <redhead@diku.dk>
+
+
+

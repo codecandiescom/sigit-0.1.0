@@ -1,0 +1,39 @@
+
+# $Id: INSTALL,v 0.2 2001/08/13 16:43:00 redhead Exp $
+
+Basic Installation
+==================
+
+   These are generic installation instructions.
+
+   If you need to do unusual things to compile the package, please try
+to figure out how `configure' could check whether to do them, and mail
+diffs or instructions to the address given in the `README' so they can
+be considered for the next release.
+
+The simplest way to compile this package is:
+
+  1. `cd' to the directory containing the package's source code and Type 
+     `make' to compile the package. 
+         
+         -- On HP-UX systems use gmake --
+
+  3. Type `make install' to install the programs and any data files and
+     documentation.
+
+  4. You can remove the program binaries and object files from the
+     source code directory by typing `make distclean'.
+
+  5. To remove the program completely you can type 'make uninstall'
+
+  6. If you want to create a rpm installation package then you just need to type
+     'rpm -tb <the tar.gz file>'
+
+Compilers and Options
+=====================
+
+   This program has only been tested on systems running Linux kernel 2.2 and 2.4
+OpenBSD, FreeBSD, HPUX-10.2 and OSF1, so theres no guarentie, that it will work on your system, but if you find that it do so, please feel free to mail me.
+
+
+Kenneth 'Redhead' Nielsen  <redhead@diku.dk>

@@ -1,0 +1,123 @@
+
+=head1 NAME
+
+sigit.rc - configuration file for sigit.
+
+=head1 DESCRIPTION
+
+The program sigit uses a sigit.rc file placed in the /etc dir, or if the user has made his own .sigitrc file in his $HOME dir, it will read from that. With this file, the outcome of the program can be costumised. 
+
+=head1 OPTIONS
+
+The sigit.rc file or .sigitrc file handles the options mentioned below, if there are other settigns beeing used, which isn't mentioned here, it will omit them. 
+
+=over 5
+
+=item E<lt>sig_fileE<gt>
+
+This is the signature file which will be written from the program. You set this option starting from your $HOME. If it's not set, it will default write to your $HOME/.plan file.
+
+=item E<lt>data_fileE<gt>
+
+This is the data file which the program reads the signatures from. This is a binary file, since it gives the fastest and easiest way of searching through the file for the desired signature to use.
+This setting should allways be started from the B</>. If its not set, it will default use B</usr/local/share/sigit/sigit.data>. 
+
+=item E<lt>t_lineE<gt>
+
+This is the setting for the top line in your signature. Most people use this as a info on their real e-mail address, or their name. If this in the end will be more than 72 chars, then the rest of the line will be discarted, so it's only the first 72 chars thats used.
+However you can use any of the conversion chars to display system info, as described in the B<@@>.
+
+=item E<lt>b_lineE<gt>
+
+This is the setting for the bottom line in your signature, normaly you would use this as an info on where your regular homepage might be located. Same requirement goes for this line, as for the top line.
+
+=item E<lt>--E<gt>
+
+This is a settign I put in, since some mail programs will automatic place a "-- \n" right befor the actual signature. Some news readers/servers removes the part of the message located belov this dilimiter to save space. If your mail program dosn't provide this feature, and you would like to follow the standard, then set it to 1, else set it to 0.
+
+=item E<lt>@@E<gt>
+
+If you have a few desired lines, you like to put infront of the signature, then you should place it between the @@ and \@@. The program will read every line located between those two delimiters, and keep them as the leading pieces of the lines used in the resulting signature. There are a few pre defined things to these lines, if you need to have a % in it, you use '%%', because the '%' is a conversion char. The following special chars are available.
+
+=over 5
+
+=item %H
+
+Displayes the homepage for the program.
+
+=item %M
+
+Displayes the machine architechture.
+
+=item %N
+
+Displayes the node name.
+
+=item %P
+
+Displayes the programname.
+
+=item %R
+
+Displayes the kernel version.
+
+=item %S
+
+Displayes the System name.
+
+=item %T
+
+Gives the current time of the system in a format lik: B<hh:mm>
+
+=item %U
+
+Displayes the current uptime in a format like: B<hh:mm up Xdays  hours:minuts>
+
+=item %V
+
+Displayes the current version of the program.
+
+=back
+
+=back
+
+If your using pine, then it's not an error in the program, if you get a "-- \n" above your signature eventho, you specificaly told it not to put one. Pine reads the signature, then if it reads a "-- \n" as the first line, it won't put a delimiter on its own, if it wasn't the special delimiter it found, it will put one automatic. So when usign pine theres nothing to do to avoid the delimiter.
+
+=head1 SEE ALSO
+
+sigit(1)
+
+
+=head1 License and Disclaimer
+
+Sigit are Copyright (c) 2000 by Kenneth 'Redhead' Nielsen. Sigit may be
+used and distributed under the terms of the GNU General Public License. All
+other brand and product names are trademarks, registered trademarks or
+service marks of their respective holders.
+
+These programs are distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+
+You should have received a copy of the GNU General Public License along with
+this distribution; if not, write to the Free Software Foundation, Inc., 59
+Temple Place, Suite 330, Boston, MA 02111, USA.
+
+=head1 AUTHOR
+
+Sigit written by 
+
+Kenneth 'Redhead' Nielsen C<redhead@diku.dk>
+
+Documentation formatting by 
+
+Kenneth 'Redhead' Nielsen C<redhead@diku.dk>
+
+All future infos on the sigit exploration, can be found at: C<http://www.redhead.dk>
+
+=cut
+
+
+
+

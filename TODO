@@ -1,0 +1,22 @@
+# $Id: TODO,v 0.5 2001/08/13 16:43:00 redhead Exp $
+
+
+  ( this is scheduled to apear in the 0.2 versions of this program, so please understand 
+    the 0.1.x versions might be extreme unstable. )
+
+* Make it act, so that a single running copy of the program can deal with multiple 
+     .signature files. Say you like writing to alot of newsgroups, but all the 
+      signatures with "Linux ROCKS!!" quotes shouldn't be send to the windows dealing
+      newsgroups. So in your role/rule in pine sets it to use .sigit-win if your reply
+      should be to a *win* newsgroup, and if it's a *linux* group, then use .signature-lin. 
+      However this requires some pthreading of the program, and to be frank, I havn't 
+      got the slightest idear how this should be dealth with. 
+      It would have to be some nonblocking way of having multiple fifos running at the same
+      time, from the same instance of the program.
+
+* Perhaps make a better and less space consuming way of storing the signature.
+     Could be done with adding gzip support in the program, so the signatures 
+     are stored in a gzip'ed file.
+
+* Make a configure script for it, but since it dosn't realy require anything, 
+     I cant see the real use in it. Would be kinda cool to have tho.
